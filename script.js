@@ -21,8 +21,13 @@ fetch('DublinPostCodes_4326.geojson') // Replace with your file path or URL
                 };
             },
             onEachFeature: function(feature, layer) {
-                // Add a popup with the postal code
-                layer.bindPopup(`Postal Code: ${feature.properties.postal_code}`);
+            layer.on('mouseover', function() {
+                this.setStyle({ fillOpacity: 0.7 });
+            });
+            layer.on('mouseout', function() {
+                this.setStyle({ fillOpacity: 0.2 });
+            });
+            layer.bindPopup(`Postal Code: ${feature.properties.postal_code}`);
             }
         }).addTo(map);
     })
