@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Load your GeoJSON file
-fetch('DublinPostCodes_4326.geojson') // Replace with your file path or URL
+fetch('https://github.com/JeaNeige/Interactive-Dublin-Map/blob/e2dde53208e5cc0cb0306aeb74ac6e11925bca27/DublinPostcodes_4326.geojson') // Replace with your file path or URL
     .then(response => response.json())
     .then(data => {
         // Add the GeoJSON layer to the map
